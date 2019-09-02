@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="robots" content="index, follow" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=7">
+  <meta charset="utf-8">
+  <title>{{.Title}}</title>
+  <meta name="csrf-param" content="authenticity_token" />
+
+  <script async type="text/javascript" src="{{getAsset "application.js"}}"></script>
+  <link type="text/css" rel="stylesheet" href="{{getAsset "grid.css"}}">
+  </script>
+  <script>
+        // !function(t){"use strict";t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+  </script>
+
+  {{str2html (loadStyleAsync (getAsset "application.css"))}}
+  {{str2html (loadStyleAsync "https://fonts.googleapis.com/css?family=Open+Sans:300,400,700")}}
+  {{str2html (loadStyleAsync "https://use.fontawesome.com/releases/v5.7.2/css/solid.css")}}
+  {{str2html (loadStyleAsync "https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css")}}
+  {{str2html (loadStyleAsync (getAsset "vendor.css"))}}
+  <!-- <link rel="stylesheet" href="{{getAsset "application.css"}}" media="none" onload="if(media!='all')media='all'"> -->
+</head>
+
+<body>
+  <section id="main" class="hero is-fullheight">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <div class="column is-4 is-offset-4">
+          {{.LayoutContent}}         
+        </div>
+      </div>
+      
+    </div>
+  </section>
+ 
+  <link type="text/css" rel="stylesheet" href="{{getAsset "auth.css"}}" />
+  {{.Scripts}}
+  
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+[mysql]
+  dbname  = "beego"
+  name    = "beego"
+  host    = "localhost"
+  port    = 3306
+  user    = "cbidev"
+  pass    = "cbidev"
+  sslmode = "false"
+  [database.parameters]
+  parseTime = "true"

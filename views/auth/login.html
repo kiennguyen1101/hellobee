@@ -1,0 +1,38 @@
+<h3 class="title has-text-grey">Login</h3>
+<p class="subtitle has-text-grey">Please login to proceed.</p>
+<div class="box">
+    <figure class="avatar">
+        <img src="/static/images/128x128.png" />
+    </figure>
+    <div id="loginApp">
+        <form i method="POST" action="">
+            {{.xsrfField}}
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" required type="text" placeholder="Your username" name="username"
+                        autofocus="" />
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <input class="input is-large" required type="password" name="password"
+                        placeholder="Your password" />
+                </div>
+            </div>
+            <div class="field">
+                <label class="checkbox">
+                    <input type="checkbox" />
+                    Remember me
+                </label>
+            </div>
+            <button disabled class="button is-block is-info is-large is-fullwidth">Login</button>
+        </form>
+    </div>
+
+</div>
+<p class="has-text-grey">
+    <a href="../">Sign Up</a> &nbsp;·&nbsp;
+    <a href="forgotpassword">Forgot Password</a> &nbsp;·&nbsp;
+    <a href="../">Need Help?</a>
+</p>
